@@ -572,28 +572,23 @@
             font-size: 14px;
             font-weight: 500;
             color: var(--text-tertiary);
-            cursor: pointer;
-            transition: all 0.2s;
             white-space: nowrap;
         }
 
-        .step-item-stepper.active {
+                .step-item-stepper.active {
             background: var(--accent-blue);
             color: white;
+            font-size: 16px;
+            font-weight: 700;
+            padding: 10px 20px;
+            opacity: 1;
+            box-shadow: 0 4px 12px rgba(0, 85, 233, 0.3);
         }
 
-        .step-item-stepper.completed {
+                .step-item-stepper.completed {
             color: var(--accent-blue);
             cursor: pointer;
-        }
-
-        .step-item-stepper.completed:hover {
-            background: rgba(86, 157, 255, 0.1);
-        }
-
-        .step-item-stepper:not(.active):not(.completed) {
-            cursor: not-allowed;
-            opacity: 0.5;
+            opacity: 0.6;
         }
 
         .step-number {
@@ -607,12 +602,16 @@
             justify-content: center;
             font-size: 12px;
             font-weight: 600;
+            transition: all 0.3s;
         }
 
-        .step-item-stepper.active .step-number {
+                .step-item-stepper.active .step-number {
             background: white;
             border-color: white;
             color: var(--accent-blue);
+            width: 28px;
+            height: 28px;
+            font-size: 14px;
         }
 
         .step-item-stepper.completed .step-number {
