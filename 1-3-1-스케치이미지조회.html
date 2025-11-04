@@ -2599,17 +2599,11 @@
                 return;
             }
 
-            const btn = event.target;
-            btn.disabled = true;
-            btn.textContent = '재생성 중...';
+            // Close manual regenerate modal
+            closeManualRegenerateModal();
 
-            setTimeout(() => {
-                alert('이미지가 재생성되었습니다.');
-                closeManualRegenerateModal();
-                btn.disabled = false;
-                btn.textContent = '이미지 재생성';
-                // TODO: Refresh the current scene image
-            }, 1500);
+            // Open auto regenerate modal (same as main "이미지 재생성" button)
+            openAutoRegenerateModal();
         }
 
         // Close modal on overlay click
