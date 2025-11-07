@@ -1332,7 +1332,7 @@
 
                     <div class="project-item" id="project-2">
                         <div class="project-header" onclick="toggleProjectExpand(2)">
-                            <img src="CEN_img/스케치이미지/4.png" alt="Project" class="project-thumbnail">
+                            <img src="CEN_img/SOLIUM_광고/Scene 4 - 잎 위의 물방울.png" alt="Project" class="project-thumbnail">
                             <div class="project-info">
                                 <div class="project-name">봄 시즌 프로모션</div>
                                 <div class="project-meta">Step 4 · 2일 전</div>
@@ -1399,7 +1399,7 @@
 
                     <div class="project-item" id="project-3">
                         <div class="project-header" onclick="toggleProjectExpand(3)">
-                            <img src="CEN_img/스케치이미지/8.png" alt="Project" class="project-thumbnail">
+                            <img src="CEN_img/SOLIUM_광고/Scene 8 - 브랜드 엔딩.png" alt="Project" class="project-thumbnail">
                             <div class="project-info">
                                 <div class="project-name">브랜드 스토리 영상</div>
                                 <div class="project-meta">Step 3 · 3일 전</div>
@@ -1935,7 +1935,7 @@
                                         </button>
                                     </div>
                                 </div>
-                                <img src="CEN_img/스케치이미지/4.png" alt="Scene 4" class="scene-image">
+                                <img src="CEN_img/SOLIUM_광고/Scene 4 - 잎 위의 물방울.png" alt="Scene 4" class="scene-image">
                                 <div class="scene-detail-grid">
                                     <div class="detail-label">타이틀</div>
                                     <div class="detail-value">첫 번째 변화: 새로운 벽</div>
@@ -2075,7 +2075,7 @@
                                         </button>
                                     </div>
                                 </div>
-                                <img src="CEN_img/스케치이미지/8.png" alt="Scene 8" class="scene-image">
+                                <img src="CEN_img/SOLIUM_광고/Scene 8 - 브랜드 엔딩.png" alt="Scene 8" class="scene-image">
                                 <div class="scene-detail-grid">
                                     <div class="detail-label">타이틀</div>
                                     <div class="detail-value">두 번째 채움: 테이블</div>
@@ -2756,12 +2756,99 @@
         // Edit Scene
         let currentEditingScene = null;
 
+        // Scene data
+        const sceneData = {
+            1: {
+                description: '낡고 혼잡한 거실 , 한 여성이 변화를 갈망하듯 공허한 표정으로 멍하니 공간을 바라봅니다.',
+                sound: '(미세하게) 실내 공간음 (Room tone), (멀리서) 시계 초침 소리, 공허함을 강조하는 낮은 BGM 시작.',
+                text: ''
+            },
+            2: {
+                description: '여성이 무언가를 결심한 듯 스마트폰을 만지작거리며, 기대와 망설임이 교차하는 눈빛으로 화면에 집중합니다.',
+                sound: '스마트폰 스크롤 터치음, (희미하게) 기대감을 고조시키는 심장 박동 소리.',
+                text: ''
+            },
+            3: {
+                description: '혼잡했던 가구들이 모션 그래픽처럼 사라지고, 햇살만 가득한 텅 빈 공간으로 정화됩니다.',
+                sound: '사물들이 사라지는 리버스(Reverse) 사운드, 공간이 울리는 듯한 신비로운 BGM.',
+                text: ''
+            },
+            4: {
+                description: '오래된 벽의 먼지와 금 위로 , 깨끗한 새 벽지가 부드럽게 롤링되며 덮이는 \'재탄생\'의 순간을 보여줍니다.',
+                sound: '\'스르륵\' 벽지가 발리는 소리, 반짝이는 클린(Clean) 효과음, BGM이 명확해짐.',
+                text: ''
+            },
+            5: {
+                description: '로우앵글에서 새 마루판들이 \'탁, 탁\' 맞물리며 자동으로 깔리고, 공간의 기초가 새로워집니다.',
+                sound: '\'탁, 탁\' 마루가 경쾌하게 맞물리는 소리, 목재 질감의 사운드.',
+                text: ''
+            },
+            6: {
+                description: '목공, 바닥, 페인트칠 등 인테리어 현장 시공 장면들이 리드미컬한 컷 편집으로 역동적으로 지나갑니다.',
+                sound: '경쾌한 BGM 비트에 맞춘 드릴 소리, 망치질 소리, 페인트 롤러 소리.',
+                text: ''
+            },
+            7: {
+                description: '깨끗한 공간에 소파 부품들이 날아와 하나씩 결합되며, 완전한 형태를 이루는 창조적인 순간입니다.',
+                sound: '부품이 \'착\' 결합하는 사운드, 세련된 모션 그래픽 효과음.',
+                text: ''
+            },
+            8: {
+                description: '공중에서 탁자의 다리와 프레임이 조립되고, 마지막 유리 상판이 부드럽게 내려앉으며 공간이 완성되어 갑니다.',
+                sound: '유리가 \'사뿐히\' 내려앉는 소리, 빛의 궤적이 흐르는 듯한 신비한 효과음.',
+                text: ''
+            },
+            9: {
+                description: '빈 화분에서 새싹이 돋아나 타임랩스처럼 풍성한 식물로 자라나며, 완성된 공간에 생명력을 불어넣습니다.',
+                sound: '식물이 \'자라나는\' 듯한 효과음 (Growing sound), 따뜻하고 평화로운 BGM.',
+                text: ''
+            },
+            10: {
+                description: '빛과 바람이 휘몰아치며 커튼이 형체를 이루고, \'촤르륵\' 소리와 함께 양옆으로 펼쳐지며 리뉴얼의 피날레를 알립니다.',
+                sound: '\'촤르륵\' 커튼 펼쳐지는 소리, 바람 소리(Swoosh), BGM이 웅장하게 고조됨 (Crescendo).',
+                text: ''
+            },
+            11: {
+                description: '모든 가구가 조화롭게 배치된 완성된 인테리어의 모습을 보여줍니다.',
+                sound: 'BGM이 정돈되고 안정적인 톤으로 변경, 따뜻한 햇살을 표현하는 Pad 사운드.',
+                text: ''
+            },
+            12: {
+                description: '초저녁 완성된 거실, 고양이가 평화롭게 걸어오다 \'야옹\' 울며 새로워진 공간을 둘러봅니다.',
+                sound: '고양이 발소리 (또각또각), \'야옹\' 우는 소리, 잔잔하고 따뜻한 BGM.',
+                text: ''
+            },
+            13: {
+                description: '오래된 스위치가 신형으로 바뀌고, 손이 나타나 스위치를 \'딸깍\' 켜며 공간의 밤을 밝힙니다.',
+                sound: '\'딸깍\' 명료한 스위치 소리, 전기가 \'흐르는\' 듯한 가벼운 험(Hum) 소리.',
+                text: ''
+            },
+            14: {
+                description: '따뜻한 조명들이 켜지며 , 소파, 식물, 커튼이 조화롭게 어우러진 포근한 밤 거실 풍경이 펼쳐집니다.',
+                sound: '조명 \'톡, 톡\' 켜지는 소리, 따뜻하고 감성적인 메인 BGM.',
+                text: ''
+            },
+            15: {
+                description: '여성이 고양이와 함께 완성된 소파에 편안히 앉아 휴식을 취하고, 슬로건이 등장하며 마무리됩니다.',
+                sound: '고양이 \'야옹\' 소리, 메인 BGM이 여운을 남기며 종료.',
+                text: '공간은 비우고 당신의 취향은 채웁니다'
+            }
+        };
+
         function editScene(sceneNumber) {
             // Open scene editing modal
             currentEditingScene = sceneNumber;
             const modal = document.getElementById('sceneEditModal');
             const modalTitle = modal.querySelector('.scene-edit-modal-title');
             modalTitle.textContent = `씬 ${sceneNumber} 편집`;
+
+            // Load scene data
+            const data = sceneData[sceneNumber];
+            if (data) {
+                document.querySelector('textarea[name="description"]').value = data.description;
+                document.querySelector('input[name="sound"]').value = data.sound;
+                document.querySelector('textarea[name="text"]').value = data.text;
+            }
 
             // Show modal with animation
             modal.style.display = 'flex';
@@ -2771,9 +2858,6 @@
 
             // Prevent body scroll
             document.body.style.overflow = 'hidden';
-
-            // Load scene data here if needed
-            // loadSceneData(sceneNumber);
         }
 
         function closeSceneEditModal() {
